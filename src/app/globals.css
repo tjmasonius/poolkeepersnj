@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-pool-950 antialiased;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-6xl px-6;
+}
+
+/* Primary CTA: turquoise fill, black text (locked wireframe) */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-pool-500 px-6 py-3
+    text-sm font-extrabold text-pool-950 shadow-soft transition hover:bg-pool-400
+    focus:outline-none focus:ring-2 focus:ring-pool-400 focus:ring-offset-2;
+}
+
+/* Secondary: navy outline / navy fill contexts use btn-dark where needed */
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-pool-200
+    bg-white px-6 py-3 text-sm font-semibold text-pool-900 transition hover:border-pool-500
+    hover:bg-pool-50 focus:outline-none focus:ring-2 focus:ring-pool-400 focus:ring-offset-2;
+}
+
+.btn-dark {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-pool-800 px-6 py-3
+    text-sm font-extrabold text-white shadow-soft transition hover:bg-pool-950
+    focus:outline-none focus:ring-2 focus:ring-pool-400 focus:ring-offset-2;
+}
+
+.section-eyebrow {
+  @apply text-xs font-bold uppercase tracking-[0.2em] text-pool-500;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-pool-100 bg-white px-4 py-3 text-sm text-pool-950
+    placeholder:text-pool-800/40 focus:border-pool-400 focus:outline-none focus:ring-2
+    focus:ring-pool-200;
+}
