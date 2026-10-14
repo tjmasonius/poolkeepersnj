@@ -1,0 +1,98 @@
+-- Pool Town opening/closing SKU paste from TJ (contractor catalog).
+-- COMMENT / data dump for later Field use. NOT public checkout rows.
+-- Public retail: Opening $325 / Closing $325 / Combo $585. Heater + waterfall
+-- are included in those package prices. Spa is the only public add-on
+-- ($60 opening / $80 closing). Do NOT seed week surcharges, Aqua Genie,
+-- caretaker, concrete, credits, chemicals, covers, grotto, filter, etc.
+-- onto poolkeepersnj.com checkout. Do not sell waterfall as a checkbox.
+--
+-- Paste OPENING--SERVICE $220 and CLOSING--SERVICE $230 are Pool Town
+-- contractor SKUs, not the retail site. Retail opening includes heater
+-- cleaning; retail closing includes heater + waterfall.
+-- Locked public add-on from this list:
+--   OPENING - SPA $60  (6000 cents)
+--   CLOSING - SPA $80  (8000 cents)
+--   There is NO opening waterfall SKU. Closing waterfall is included in
+--   the $325 / $585 package, not charged as an add-on.
+--
+-- sku | amount_usd
+-- CLOSING--SERVICE | $230.00
+-- CLOSING--SERVICE--AQUA GENIE | $230.00
+-- CLOSING - CUSTOMER TO INSTALL THEIR COVER- | $30.00
+-- CLOSING - ADD CHEMICALS | $30.00
+-- CLOSING - ADD TARP COVER OVER SAFETY COVER | $30.00
+-- CLOSING - ADDITIONAL PUMP | $30.00
+-- CLOSING - CARETAKER - includes antifreeze | $230.00
+-- CLOSING - CONCRETE | $100.00
+-- CLOSING - CONCRETE POOL | $100.00
+-- CLOSING - COVER PUMP - DELIVERY AND INSTALL | $70.00
+-- CLOSING - COVER - ADJUSTMENT | $100.00
+-- CLOSING - COVER - INSPECTION | $100.00
+-- CLOSING - COVER - INSTALL ONLY | $180.00
+-- CLOSING - COVER - WATER/DEBRIS REMOVAL PER 30 MINUTES | $100.00
+-- CLOSING - FIBERGLASS POOL | $60.00
+-- CLOSING - FILTER - DE/CARTRIDGE CLEANING | $170.00
+-- CLOSING - GROTTO | $80.00
+-- CLOSING - GROTTO - RAISED WALL | $80.00
+-- CLOSING - HEATER | $20.00
+-- CLOSING - SPA | $80.00
+-- CLOSING - UV | $60.00
+-- CLOSING - WATERFALL | $20.00
+-- CLOSING - BLOW OUT LINES ONLY | $240.00
+-- CLOSING - BLOW OUT LINES ONLY - AQUA GENIE | $240.00
+-- CLOSING - WEEK 2-31 - JAN 5 - AUG 1 2026 | $0.00
+-- CLOSING - WEEK 32 - AUG 3 - AUG 7 2026 | $0.00
+-- CLOSING - WEEK 33 - AUG 10 - AUG 14 2026 | $0.00
+-- CLOSING - WEEK 34 - AUG 17 - AUG 21 2026 | $0.00
+-- CLOSING - WEEK 35 - AUG 24 - AUG 28 2026 | $0.00
+-- CLOSING - WEEK 36 - AUG 31 - SEP 4 2026 | $0.00
+-- CLOSING - WEEK 37 - SEP 7 - SEP 11 2026 | $40.00
+-- CLOSING - WEEK 38 - SEP 14 - SEP 18 2026 | $40.00
+-- CLOSING - WEEK 39 - SEP 21 - SEP 25 2026 | $40.00
+-- CLOSING - WEEK 40 - SEP 28 - OCT 2 2026 | $40.00
+-- CLOSING - WEEK 41 - OCT 5 - OCT 9 2026 | $40.00
+-- CLOSING - WEEK 42 - OCT 12 - OCT 16 2026 | $40.00
+-- CLOSING - WEEK 43 - OCT 19 - OCT 23 2026 | $40.00
+-- CLOSING - WEEK 44 - OCT 26 - OCT 30 2026 | $40.00
+-- CLOSING - WEEK 45 - NOV 2 - NOV 6 2026 | $40.00
+-- CLOSING - WEEK 46 - NOV 9 - NOV 13 2026 | $40.00
+-- CLOSING - WEEK 47 - NOV 16 - NOV 20 2026 | $40.00
+-- CLOSING - WEEK 48 - NOV 23 - NOV 27 2026 | $60.00
+-- CLOSING - WEEK 49 - NOV 30 - DEC 4 2026 | $60.00
+-- CLOSING - WEEK 50 - DEC 7 - DEC 11 2026 | $60.00
+-- CLOSING - WEEK 51 - DEC 14 - DEC 18 2026 | $90.00
+-- CLOSING - WEEK 52 - DEC 21 - DEC 23 2026 | $90.00
+-- CLOSING - WEEK 53 - DEC 28 - DEC 30 2026 | $90.00
+-- OPENING--SERVICE | $220.00
+-- OPENING--SERVICE--AQUA GENIE | $220.00
+-- OPENING - CUSTOMER TO REMOVE COVER- | $30.00
+-- OPENING - ADD CHEMICALS | $40.00
+-- OPENING - ADDITIONAL PUMP | $30.00
+-- OPENING - CARETAKER | $150.00
+-- OPENING - COVER FELL IN POOL - REMOVAL | $120.00
+-- OPENING - COVER WATER/DEBRIS REMOVAL PER 30 MINUTES | $100.00
+-- OPENING - FILTER - DE/CARTRIDGE CLEANING | $170.00
+-- OPENING - GROTTO | $80.00
+-- OPENING - HEATER CLEANING | $70.00
+-- OPENING - REMOVE TARP COVER OVER SAFETY COVER | $80.00
+-- OPENING - SALT CELL CLEANING | $60.00
+-- OPENING - SPA | $60.00
+-- OPENING - WEEK 1 - 13 - JAN 4 - MAR 26 2027 | $0.00
+-- OPENING - WEEK 14 - MAR 29 - APR 2 2027 | $10.00
+-- OPENING - WEEK 15 - APR 5 - APR 9 2027 | $20.00
+-- OPENING - WEEK 16 - APR 12 - APR 16 2027 | $40.00
+-- OPENING - WEEK 17 - APR 19 - APR 23 2027 | $50.00
+-- OPENING - WEEK 18 - APR 26 - APR 30 2027 | $60.00
+-- OPENING - WEEK 19 - MAY 3 - MAY 7 2027 | $70.00
+-- OPENING - WEEK 20 - MAY 10 - MAY 14 2027 | $80.00
+-- OPENING - WEEK 21 - MAY 17 - MAY 21 2027 | $100.00
+-- OPENING - WEEK 22 - MAY 24 - MAY 28 2027 | $90.00
+-- OPENING - WEEK 23 - MAY 31 - JUN 4 2027 | $60.00
+-- OPENING - WEEK 24 - JUN 7 - JUN 11 2027 | $50.00
+-- OPENING - WEEK 25 - JUN 14 - JUN 18 2027 | $40.00
+-- OPENING - WEEK 26 - JUN 21 - JUN 25 2027 | $30.00
+-- OPENING - WEEK 27 - JUN 28 - JUL 2 2027 | $30.00
+-- OPENING - WEEK 28 - 52 - JUL 5 - DEC 24 2027 | $20.00
+--
+-- End of paste. 77 SKUs. Do not create public checkout rows for any of
+-- these except spa season prices documented above. Waterfall stays off checkout.

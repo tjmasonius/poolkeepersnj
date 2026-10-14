@@ -1,0 +1,5 @@
+FIND.txt
+TREE.txt
+README.md
+.env.local.example
+.env*
