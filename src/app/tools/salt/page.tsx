@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { BookCta } from "@/components/BookCta";
+import { CallUsSticky, CallUsTopBar } from "@/components/CallUs";
 import { Disclaimer } from "@/components/Disclaimer";
 import { JsonLd } from "@/components/JsonLd";
 import { FaqList } from "@/components/guides/FaqList";
@@ -82,7 +83,8 @@ export default function SaltToolPage() {
         title="Salt calculator"
         lede="Pounds of salt, and 40-pound bags, from your gallons and your ppm. The target starts at 3200 because generator models differ."
       />
-      <div className="container-page py-14">
+      <CallUsTopBar />
+      <div className="container-page pt-14 pb-28 md:pb-14">
         <Suspense fallback={<CalculatorFallback />}>
           <SaltCalculator />
         </Suspense>
@@ -134,6 +136,7 @@ export default function SaltToolPage() {
           body="We test salt with the rest of the water, clean cells when the manual calls for it, and keep weekly chlorine honest through the Jersey summer."
         />
       </div>
+      <CallUsSticky />
     </>
   );
 }

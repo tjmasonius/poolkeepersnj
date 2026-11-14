@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { BookCta } from "@/components/BookCta";
+import { CallUsSticky, CallUsTopBar } from "@/components/CallUs";
 import { Disclaimer } from "@/components/Disclaimer";
 import { JsonLd } from "@/components/JsonLd";
 import { FaqList } from "@/components/guides/FaqList";
@@ -85,7 +86,8 @@ export default function ChlorineToolPage() {
         title="Chlorine calculator"
         lede="Liquid, cal-hypo, dichlor, or trichlor, in the unit you can measure. The CYA line shows the everyday minimum and the shock level."
       />
-      <div className="container-page py-14">
+      <CallUsTopBar />
+      <div className="container-page pt-14 pb-28 md:pb-14">
         <Suspense fallback={<CalculatorFallback />}>
           <ChlorineCalculator />
         </Suspense>
@@ -144,6 +146,7 @@ export default function ChlorineToolPage() {
         <RelatedTools current="chlorine" />
         <BookCta />
       </div>
+      <CallUsSticky />
     </>
   );
 }

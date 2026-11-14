@@ -5,6 +5,7 @@ const services = `When the water is past a weekend project, [pool openings](/ser
 export const treatmentGuides: GuideInput[] = [
   {
     slug: "how-to-shock-a-pool",
+    serviceTypes: ["open", "weekly"],
     title: "How to Shock a Pool",
     description:
       "Breakpoint chlorination and a CYA-based SLAM hold, which product to use, and how to know the shock is actually finished.",
@@ -65,6 +66,7 @@ Potassium monopersulfate can oxidize some waste and will not give you a free-chl
   },
   {
     slug: "algae-prevention",
+    serviceTypes: ["weekly"],
     title: "How to Keep Algae Out of a Pool",
     description:
       "The circulation, chlorine, and brushing habits that prevent green, mustard, and black algae in a New Jersey summer.",
@@ -125,6 +127,7 @@ No. It is a follow-up when algae returns after chlorine and filtration are alrea
   },
   {
     slug: "clear-a-green-pool",
+    serviceTypes: ["open", "weekly"],
     title: "How to Clear a Green Pool",
     description:
       "A practical sequence for green algae: test, brush, hold chlorine, filter, and tell it apart from metal-stained water.",
@@ -182,6 +185,7 @@ No. If you can see algae, the sanitizer is not in control. Wait until the water 
   },
   {
     slug: "black-algae",
+    serviceTypes: ["weekly"],
     title: "Black Algae in a Pool",
     description:
       "Why black spots root into plaster, why brushing matters more than a single shock, and what vinyl pools should expect instead.",
@@ -238,6 +242,7 @@ Yes. Anything that sat on the spots should be cleaned and dried, not tossed back
   },
   {
     slug: "mustard-algae",
+    serviceTypes: ["weekly"],
     title: "Mustard Algae: The Yellow Dust That Comes Back",
     description:
       "How mustard algae differs from pollen and green algae, and why you have to hold chlorine and brush or it resettles overnight.",

@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { BookCta } from "@/components/BookCta";
+import { CallUsSticky, CallUsTopBar } from "@/components/CallUs";
+import { ServiceTags } from "@/components/guides/ServiceTags";
 import { JsonLd } from "@/components/JsonLd";
 import { CoreServiceLinks } from "@/components/guides/CoreServiceLinks";
 import { MarkdownBody } from "@/components/guides/MarkdownBody";
@@ -75,18 +77,19 @@ export default async function LearnSlugPage({
           <ul className="grid gap-4">
             {articles.map((article) => (
               <li key={article.slug}>
-                <Link
-                  href={`/learn/${article.slug}`}
-                  className="block rounded-2xl border border-pool-100 px-5 py-5 hover:border-pool-400"
-                >
-                  <span className="text-lg font-semibold text-pool-950">{article.title}</span>
-                  <span className="mt-2 block text-sm leading-relaxed text-pool-900/70">
+                <div className="rounded-2xl border border-pool-100 px-5 py-5">
+                  <ServiceTags types={article.serviceTypes} />
+                  <Link
+                    href={`/learn/${article.slug}`}
+                    className="mt-2 block text-lg font-semibold text-pool-950 hover:text-pool-700"
+                  >
+                    {article.title}
+                  </Link>
+                  <p className="mt-2 text-sm leading-relaxed text-pool-900/70">
                     {article.description}
-                  </span>
-                  <span className="mt-2 block text-xs font-medium text-pool-800">
-                    {article.minutes} min read
-                  </span>
-                </Link>
+                  </p>
+                  <p className="mt-2 text-xs font-medium text-pool-800">{article.minutes} min read</p>
+                </div>
               </li>
             ))}
           </ul>
@@ -127,8 +130,10 @@ export default async function LearnSlugPage({
       {guide.faqs.length > 0 ? <JsonLd data={faqJsonLd(guide.faqs)} /> : null}
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
       <PageHero crumbs={crumbs} eyebrow={categoryForGuide?.title ?? "Guide"} title={guide.title} lede={guide.description} />
-      <div className="container-page py-14">
-        <p className="text-sm text-pool-900/60">
+      <CallUsTopBar />
+      <div className="container-page pt-14 pb-28 md:pb-14">
+        <ServiceTags types={guide.serviceTypes} />
+        <p className="mt-3 text-sm text-pool-900/60">
           {formatDate(guide.published)} · {guide.minutes} min read · Pool Keepers NJ
         </p>
         {headings.length > 0 ? (
@@ -186,6 +191,7 @@ export default async function LearnSlugPage({
         ) : null}
         <BookCta />
       </div>
+      <CallUsSticky />
     </>
   );
 }

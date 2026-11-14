@@ -5,6 +5,7 @@ const services = `Equipment checks that belong on a visit are scoped separately 
 export const equipmentAGuides: GuideInput[] = [
   {
     slug: "pool-equipment-basics",
+    serviceTypes: ["open", "close", "weekly"],
     title: "Pool Equipment Basics: Pump, Filter, and Heater",
     description:
       "What the pump, the three filter types, and the heater each do, and which problems are flow problems before they are part problems.",
@@ -63,6 +64,7 @@ They are different scopes. Say what you need when you book so the person on the 
   },
   {
     slug: "filter-care",
+    serviceTypes: ["open", "close", "weekly"],
     title: "Filter Care for Sand, Cartridge, and DE",
     description:
       "How to maintain sand, cartridge, and DE pool filters, when pressure says it is time, and the mistakes that send debris back into the pool.",
@@ -117,6 +119,7 @@ A puff of DE in the water from a torn grid is a filtration failure, not a saniti
   },
   {
     slug: "pump-wont-prime",
+    serviceTypes: ["open", "weekly"],
     title: "Pool Pump Will Not Prime",
     description:
       "Why a pool pump loses prime, the air leaks and closed valves to check first, and when to stop before you burn the seal.",
@@ -167,6 +170,7 @@ That can be cavitation from a clogged impeller or a closed valve, or a failing b
   },
   {
     slug: "filter-pressure",
+    serviceTypes: ["open", "weekly"],
     title: "Low and High Pool Filter Pressure",
     description:
       "How to read a filter gauge, what a rise of 8 to 10 psi means, and how to tell a dirty filter from a clogged basket or a bad gauge.",

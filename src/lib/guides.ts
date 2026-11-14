@@ -8,10 +8,12 @@ import { equipmentBGuides } from "@/content/guides/equipment-b";
 import {
   CALCULATOR_LINKS,
   GUIDE_CATEGORIES,
+  isServiceType,
   type CalculatorId,
   type GuideCategory,
   type GuideCategoryId,
   type GuideInput,
+  type ServiceType,
 } from "@/lib/guide-types";
 import { countWords, extractFaqs, parseMarkdown, type Block, type FaqItem } from "@/lib/markdown";
 import { PUBLISHED } from "@/lib/services";
@@ -72,7 +74,19 @@ function assertCatalog(guides: Guide[]) {
         throw new Error(`${guide.slug} has unknown calculator ${calculator}`);
       }
     }
+    if (!guide.serviceTypes?.length) {
+      throw new Error(`${guide.slug} is missing serviceTypes`);
+    }
+    for (const serviceType of guide.serviceTypes) {
+      if (!isServiceType(serviceType)) {
+        throw new Error(`${guide.slug} has unknown service type ${serviceType}`);
+      }
+    }
   }
+}
+
+export function guidesForService(serviceType: ServiceType): Guide[] {
+  return getAllGuides().filter((guide) => guide.serviceTypes.includes(serviceType));
 }
 
 assertCatalog(GUIDES);

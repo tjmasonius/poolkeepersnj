@@ -5,6 +5,7 @@ const services = `If the water problem is bigger than a test and a filter clean,
 export const problemGuides: GuideInput[] = [
   {
     slug: "cloudy-water",
+    serviceTypes: ["weekly"],
     title: "Cloudy Pool Water: Causes and Fixes",
     description:
       "How to tell early algae, poor filtration, and calcium cloudiness apart, and what to do first so you do not add the wrong chemical.",
@@ -61,6 +62,7 @@ If you cannot see the floor or the main drain, do not swim. You also do not know
   },
   {
     slug: "pool-foam",
+    serviceTypes: ["weekly"],
     title: "Why a Pool Is Foaming",
     description:
       "Foam usually means contamination or a leftover algaecide, not a broken sanitizer. How to tell detergent foam from a chemistry problem.",
@@ -117,6 +119,7 @@ Detergent and some treatment leftovers are a reason to stay out until you know w
   },
   {
     slug: "pool-leaks",
+    serviceTypes: ["weekly"],
     title: "Pool Leaks and the Bucket Test",
     description:
       "How to separate evaporation from a leak with a bucket test, and how to tell a shell leak from a plumbing leak before you drain the pool.",

@@ -5,6 +5,7 @@ const services = `Hand the testing to a route if you want it off your weekend: [
 export const chemistryRestGuides: GuideInput[] = [
   {
     slug: "calcium-hardness",
+    serviceTypes: ["open", "weekly"],
     title: "Calcium Hardness for Plaster, Vinyl, and Fiberglass",
     description:
       "Why plaster wants 200 to 400 ppm calcium, why vinyl and fiberglass stay lower, and why the only way down is fresh water.",
@@ -59,6 +60,7 @@ The surface still sets the target. The cell needs the water not to scale, which 
   },
   {
     slug: "cya-stabilizer",
+    serviceTypes: ["open", "weekly"],
     title: "CYA and Pool Stabilizer, Explained",
     description:
       "How cyanuric acid protects chlorine from the sun, why too much locks chlorine up, and how the 7.5% rule sets your free-chlorine minimum.",
@@ -113,6 +115,7 @@ Often 60 to 80 ppm outdoors, and only if the manual agrees. The cell still has t
   },
   {
     slug: "salt-vs-chlorine",
+    serviceTypes: ["weekly"],
     title: "Saltwater vs Chlorine Pools",
     description:
       "A salt pool still uses chlorine. Here is what a generator changes, what it does not, and how to choose for a New Jersey season.",
@@ -169,6 +172,7 @@ Yes, when combined chlorine is high, after a storm, or when algae starts. The ce
   },
   {
     slug: "saltwater-pool-care",
+    serviceTypes: ["open", "weekly", "close"],
     title: "Saltwater Pool Care Through a Jersey Season",
     description:
       "How to run a salt chlorine generator in New Jersey: cold-water cutoffs, CYA, pH creep, salt testing, and when the cell is lying.",
@@ -227,6 +231,7 @@ Pool salt around 3000 ppm tastes faintly salty to some people and is far below s
   },
   {
     slug: "phosphates",
+    serviceTypes: ["weekly"],
     title: "Phosphates in Pool Water",
     description:
       "What phosphates feed, what they do not do, and when a remover makes sense after chlorine, brushing, and filtration are already right.",
@@ -285,6 +290,7 @@ Cloudiness can be the remover doing what it does. Run the filter, watch pressure
   },
   {
     slug: "how-often-to-test",
+    serviceTypes: ["open", "weekly", "close"],
     title: "How Often to Test Pool Water",
     description:
       "A practical testing schedule for free chlorine, pH, alkalinity, calcium, CYA, and salt through a New Jersey swim season.",

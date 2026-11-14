@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { BookCta } from "@/components/BookCta";
+import { CallUsSticky, CallUsTopBar } from "@/components/CallUs";
 import { JsonLd } from "@/components/JsonLd";
 import { FaqList } from "@/components/guides/FaqList";
 import { CALCULATOR_LINKS } from "@/lib/guide-types";
@@ -48,7 +49,8 @@ export default function ToolsPage() {
         title="Pool calculators"
         lede="Volume, salt, and chlorine, with the formula on the page. Built for residential pools in Monmouth, Ocean, Middlesex, and Mercer Counties."
       />
-      <div className="container-page py-14">
+      <CallUsTopBar />
+      <div className="container-page pt-14 pb-28 md:pb-14">
         <div className="grid gap-5 md:grid-cols-3">
           {Object.values(CALCULATOR_LINKS).map((tool) => (
             <Link
@@ -77,6 +79,7 @@ export default function ToolsPage() {
         <FaqList items={faqs} />
         <BookCta />
       </div>
+      <CallUsSticky />
     </>
   );
 }

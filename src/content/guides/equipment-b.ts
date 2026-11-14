@@ -5,6 +5,7 @@ const services = `Pad problems and seasonal visits are different quotes. [Weekly
 export const equipmentBGuides: GuideInput[] = [
   {
     slug: "heater-wont-fire",
+    serviceTypes: ["open", "weekly"],
     title: "Pool Heater Will Not Fire",
     description:
       "Safe checks when a gas or heat pump will not run: flow, thermostat, gas supply, and the New Jersey limits of a heat pump.",
@@ -59,6 +60,7 @@ It may run a long time and still gain only a little. Cool air limits it. A gas h
   },
   {
     slug: "salt-cell-errors",
+    serviceTypes: ["open", "close", "weekly"],
     title: "Salt Cell Error Lights and What They Mean",
     description:
       "Low salt, low flow, cold water, and scale: how to tell a real salt problem from a cell that is lying, without scraping the plates.",
@@ -113,6 +115,7 @@ No. It is a maintenance producer. A green pool or high combined chlorine needs t
   },
   {
     slug: "pool-covers",
+    serviceTypes: ["open", "close"],
     title: "Pool Covers: Safety Mesh, Winter, and Solar",
     description:
       "How mesh safety covers, solid winter covers, and solar blankets differ in a New Jersey winter, including water level and rain.",
@@ -167,6 +170,7 @@ If water pools, the mesh is clogged or it is actually a solid cover. Pump the wa
   },
   {
     slug: "robotic-pool-cleaners",
+    serviceTypes: ["weekly"],
     title: "Robotic Pool Cleaners",
     description:
       "What a robotic cleaner does well, what it cannot balance, and how to keep it from spreading algae or chewing a cover.",

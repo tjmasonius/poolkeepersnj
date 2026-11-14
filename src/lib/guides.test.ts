@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { GUIDE_CATEGORIES } from "@/lib/guide-types";
+import { GUIDE_CATEGORIES, SERVICE_TYPES } from "@/lib/guide-types";
 import { getAllGuides, getCategory, getGuide } from "@/lib/guides";
 import { CORE_SERVICES } from "@/lib/services";
 
@@ -84,6 +84,19 @@ describe("guide catalog", () => {
     }
   });
 
+  it("tags every guide with the visit it belongs to", () => {
+    const allowed = new Set(SERVICE_TYPES.map((service) => service.id));
+    expect(getGuide("pool-opening-checklist")?.serviceTypes).toEqual(["open"]);
+    expect(getGuide("pool-closing-checklist")?.serviceTypes).toEqual(["close"]);
+    expect(getGuide("weekly-pool-maintenance")?.serviceTypes).toEqual(["weekly"]);
+    for (const guide of guides) {
+      expect(guide.serviceTypes.length, guide.slug).toBeGreaterThan(0);
+      for (const serviceType of guide.serviceTypes) {
+        expect(allowed.has(serviceType), guide.slug).toBe(true);
+      }
+    }
+  });
+
   it("renders the three core services on the article template", () => {
     const card = readFileSync("src/components/guides/CoreServiceLinks.tsx", "utf8");
     const page = readFileSync("src/app/learn/[slug]/page.tsx", "utf8");
@@ -91,5 +104,15 @@ describe("guide catalog", () => {
     expect(page).toContain("CoreServiceLinks");
     expect(page).toContain("faqJsonLd");
     expect(page).toContain("articleJsonLd");
+    expect(page).toContain("CallUsTopBar");
+    expect(page).toContain("CallUsSticky");
+    const callUs = readFileSync("src/components/CallUs.tsx", "utf8");
+    expect(callUs).toContain("siteConfig.phoneHref");
+    expect(callUs).toContain("Call us");
+    for (const tool of ["page.tsx", "pool-volume/page.tsx", "salt/page.tsx", "chlorine/page.tsx"]) {
+      const source = readFileSync(`src/app/tools/${tool}`, "utf8");
+      expect(source, tool).toContain("CallUsTopBar");
+      expect(source, tool).toContain("CallUsSticky");
+    }
   });
 });

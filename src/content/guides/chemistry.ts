@@ -5,6 +5,7 @@ const services = `If you want this handled on a route, start with [pool openings
 export const chemistryGuides: GuideInput[] = [
   {
     slug: "water-chemistry-basics",
+    serviceTypes: ["open", "weekly"],
     title: "Pool Water Chemistry Basics for New Jersey",
     description:
       "Ideal ranges for free chlorine, pH, alkalinity, calcium, CYA, and salt, written for sunny New Jersey pools and matched to our calculators.",
@@ -81,6 +82,7 @@ Free chlorine and pH, several times a week in July. Alkalinity weekly. Calcium a
   },
   {
     slug: "ph-and-chlorine",
+    serviceTypes: ["weekly"],
     title: "pH and Chlorine: How to Balance Both",
     description:
       "How pH changes chlorine's work, what 7.4 to 7.6 means in a stabilized pool, and how to raise or lower pH without fighting alkalinity.",
@@ -142,6 +144,7 @@ Almost never on a residential pool. Stop dosing and let sun and time bring it do
   },
   {
     slug: "total-alkalinity",
+    serviceTypes: ["open", "close", "weekly"],
     title: "Total Alkalinity in a Swimming Pool",
     description:
       "What total alkalinity does, why 80 to 120 ppm is the usual band, and why salt pools often run lower so pH stops drifting up.",

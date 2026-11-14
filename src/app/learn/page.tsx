@@ -4,8 +4,9 @@ import { PageHero } from "@/components/PageHero";
 import { BookCta } from "@/components/BookCta";
 import { JsonLd } from "@/components/JsonLd";
 import { FaqList } from "@/components/guides/FaqList";
-import { GUIDE_CATEGORIES } from "@/lib/guide-types";
+import { GUIDE_CATEGORIES, isServiceType, SERVICE_TYPES } from "@/lib/guide-types";
 import { getAllGuides, guidesInCategory } from "@/lib/guides";
+import { ServiceFilter, ServiceTags } from "@/components/guides/ServiceTags";
 import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 
 const title = "Pool Care Guides | Pool Keepers NJ";
@@ -38,8 +39,15 @@ const faqs = [
   },
 ];
 
-export default function LearnIndexPage() {
-  const total = getAllGuides().length;
+export default async function LearnIndexPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ service?: string }>;
+}) {
+  const { service } = await searchParams;
+  const selected = isServiceType(service) ? service : null;
+  const selectedLabel = SERVICE_TYPES.find((item) => item.id === selected)?.label;
+  const total = getAllGuides().filter((guide) => !selected || guide.serviceTypes.includes(selected)).length;
   return (
     <>
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
@@ -51,9 +59,18 @@ export default function LearnIndexPage() {
         lede={`${total} practical articles for residential pools in Monmouth, Ocean, Middlesex, and Mercer Counties. Chemistry, season, and equipment, with the calculators linked where a dose depends on gallons.`}
       />
       <div className="container-page py-14">
-        <div className="grid gap-10">
+        <ServiceFilter selected={selected} />
+        <p className="mt-4 text-sm text-pool-900/70">
+          {selectedLabel
+            ? `${total} ${total === 1 ? "guide" : "guides"} tagged ${selectedLabel}.`
+            : `${total} guides. Filter by the visit they belong with.`}
+        </p>
+        <div className="mt-10 grid gap-10">
           {GUIDE_CATEGORIES.map((category) => {
-            const articles = guidesInCategory(category.id);
+            const articles = guidesInCategory(category.id).filter(
+              (guide) => !selected || guide.serviceTypes.includes(selected),
+            );
+            if (articles.length === 0) return null;
             return (
               <section key={category.id} aria-labelledby={`cat-${category.id}`}>
                 <div className="flex flex-wrap items-end justify-between gap-3">
@@ -76,16 +93,17 @@ export default function LearnIndexPage() {
                 </div>
                 <ul className="mt-5 grid gap-3 md:grid-cols-2">
                   {articles.map((article) => (
-                    <li key={article.slug}>
+                    <li key={article.slug} className="rounded-2xl border border-pool-100 px-4 py-4">
+                      <ServiceTags types={article.serviceTypes} />
                       <Link
                         href={`/learn/${article.slug}`}
-                        className="block rounded-2xl border border-pool-100 px-4 py-4 hover:border-pool-400"
+                        className="mt-2 block font-semibold text-pool-950 hover:text-pool-700"
                       >
-                        <span className="font-semibold text-pool-950">{article.title}</span>
-                        <span className="mt-1 block text-sm leading-relaxed text-pool-900/65">
-                          {article.description}
-                        </span>
+                        {article.title}
                       </Link>
+                      <p className="mt-2 text-sm leading-relaxed text-pool-900/65">
+                        {article.description}
+                      </p>
                     </li>
                   ))}
                 </ul>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { BookCta } from "@/components/BookCta";
+import { CallUsSticky, CallUsTopBar } from "@/components/CallUs";
 import { Disclaimer } from "@/components/Disclaimer";
 import { JsonLd } from "@/components/JsonLd";
 import { FaqList } from "@/components/guides/FaqList";
@@ -75,7 +76,8 @@ export default function PoolVolumePage() {
         title="Pool volume calculator"
         lede="Gallons and liters from the shape of the pool. The result carries into the salt and chlorine calculators."
       />
-      <div className="container-page py-14">
+      <CallUsTopBar />
+      <div className="container-page pt-14 pb-28 md:pb-14">
         <Suspense fallback={<CalculatorFallback />}>
           <PoolVolumeCalculator />
         </Suspense>
@@ -135,6 +137,7 @@ export default function PoolVolumePage() {
           body="Openings, weekly service, and closings start from a test on site. Tell us the town and the pool, and we will quote the scope before anyone is on the route."
         />
       </div>
+      <CallUsSticky />
     </>
   );
 }

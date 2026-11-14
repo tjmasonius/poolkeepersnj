@@ -5,6 +5,7 @@ const services = `Pool Keepers books these as three different visits, each with 
 export const seasonalGuides: GuideInput[] = [
   {
     slug: "pool-opening-checklist",
+    serviceTypes: ["open"],
     title: "Pool Opening Checklist for New Jersey",
     description:
       "A spring opening sequence for NJ pools: cover, freeze damage, start-up, and the first chemistry tests before Memorial Day.",
@@ -65,6 +66,7 @@ No. Test. Last year's CYA, calcium, and salt are still in the water unless you e
   },
   {
     slug: "pool-closing-checklist",
+    serviceTypes: ["close"],
     title: "Pool Closing Checklist",
     description:
       "A fall closing sequence: balance, water level, blown lines, drained equipment, and the cover, timed for a New Jersey freeze.",
@@ -123,6 +125,7 @@ Clear it first if you still have warm days and a working filter. Closing on a li
   },
   {
     slug: "winterizing-a-pool-in-nj",
+    serviceTypes: ["close"],
     title: "Winterizing a Pool in New Jersey",
     description:
       "Freeze timing for shore and inland NJ, what has to be drained, and how mesh and solid covers change the winter plan.",
@@ -179,6 +182,7 @@ No. The cover type changes the water level and the rain plan. It does not change
   },
   {
     slug: "nj-pool-season",
+    serviceTypes: ["open", "close", "weekly"],
     title: "The New Jersey Pool Season, Month by Month",
     description:
       "When pools open, peak, and close in Monmouth, Ocean, Middlesex, and Mercer Counties, based on water temperature rather than a single date.",
@@ -241,6 +245,7 @@ Only if the water is still warm enough for that model and you are willing to win
   },
   {
     slug: "weekly-pool-maintenance",
+    serviceTypes: ["weekly"],
     title: "A Weekly Pool Maintenance Routine",
     description:
       "The weekly lap that keeps a New Jersey pool clear: baskets, brush, water level, filter pressure, and the two tests that cannot wait.",
@@ -295,6 +300,7 @@ No. Add it when the test is under the target. Adding on a schedule without a tes
   },
   {
     slug: "after-rain-and-storms",
+    serviceTypes: ["weekly"],
     title: "Pool Care After Rain and Storms",
     description:
       "What heavy rain, wind, and a thunderstorm change in a New Jersey pool, and the order to test, lower the water, and restart equipment.",

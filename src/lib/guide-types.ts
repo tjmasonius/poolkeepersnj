@@ -7,11 +7,26 @@ export type GuideCategoryId =
   | "seasonal-care"
   | "equipment";
 
+/** Which Pool Keepers visit this guide is written for. */
+export type ServiceType = "open" | "close" | "weekly";
+
+export const SERVICE_TYPES: { id: ServiceType; label: string; href: string }[] = [
+  { id: "open", label: "Open", href: "/services/pool-openings" },
+  { id: "close", label: "Close", href: "/services/pool-closings" },
+  { id: "weekly", label: "Weekly", href: "/services/weekly-maintenance" },
+];
+
+export function isServiceType(value: string | undefined): value is ServiceType {
+  return value === "open" || value === "close" || value === "weekly";
+}
+
 export type GuideInput = {
   slug: string;
   title: string;
   description: string;
   category: GuideCategoryId;
+  /** serviceTypes: [open, weekly] — visits this article belongs with. */
+  serviceTypes: ServiceType[];
   order: number;
   related: string[];
   calculators: CalculatorId[];

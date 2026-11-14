@@ -20,8 +20,9 @@ export function BookCta({
           Get a quote <ArrowRight className="h-4 w-4" />
         </Link>
         <a href={siteConfig.phoneHref} className="btn-dark border border-white/15">
-          <Phone className="h-4 w-4" />
-          Call {siteConfig.phone}
+          <Phone className="h-4 w-4" aria-hidden />
+          Call us
+          <span>{siteConfig.phone}</span>
         </a>
       </div>
     </section>
