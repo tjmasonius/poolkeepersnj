@@ -2,11 +2,14 @@ import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: `Service Area | ${siteConfig.brandName}`,
-};
+  description: `Pool service in ${siteConfig.serviceAreaFull}, from Whiting out through the shore and inland towns on the route.`,
+  path: "/service-area",
+});
 
 
 export default function ServiceAreaPage() {

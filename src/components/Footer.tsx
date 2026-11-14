@@ -38,6 +38,31 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/services/weekly-maintenance" className="hover:text-white">
+                Weekly maintenance
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/pool-openings" className="hover:text-white">
+                Pool openings
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/pool-closings" className="hover:text-white">
+                Pool closings
+              </Link>
+            </li>
+            <li>
+              <Link href="/learn" className="hover:text-white">
+                Pool care guides
+              </Link>
+            </li>
+            <li>
+              <Link href="/tools" className="hover:text-white">
+                Calculators
+              </Link>
+            </li>
+            <li>
               <Link href="/packages" className="hover:text-white">
                 Packages
               </Link>

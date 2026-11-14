@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Checkout | ${siteConfig.brandName}`,
+  robots: { index: false, follow: false },
 };
 
 export default async function CheckoutPage({

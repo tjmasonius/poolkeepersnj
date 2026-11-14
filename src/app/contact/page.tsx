@@ -4,11 +4,14 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { siteConfig } from "@/lib/site-config";
 import type { Service } from "@/lib/types";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: `Contact | ${siteConfig.brandName}`,
-};
+  description: `Request a quote from ${siteConfig.brandName} for pool openings, closings, and weekly maintenance in ${siteConfig.serviceAreaFull}. Call ${siteConfig.phone}.`,
+  path: "/contact",
+});
 
 
 async function getServices(): Promise<Service[]> {

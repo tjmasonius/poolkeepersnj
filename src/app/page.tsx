@@ -198,6 +198,32 @@ export default function HomePage() {
       </section>
 
 
+      <section className="container-page py-12 md:py-16">
+        <p className="section-eyebrow">Pool care</p>
+        <h2 className="mt-2 text-2xl font-bold tracking-tight text-pool-950 md:text-3xl">
+          Calculators and guides for Jersey pools
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-pool-900/70 md:text-base">
+          Volume, salt, and chlorine math, plus a library on chemistry, algae, openings,
+          closings, and equipment. Written for Monmouth, Ocean, Middlesex, and Mercer Counties.
+        </p>
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <Link href="/tools" className="rounded-[14px] border border-pool-100 p-5 hover:border-pool-400">
+            <strong className="block text-base font-bold text-pool-950">Calculators</strong>
+            <span className="mt-1 block text-sm text-pool-900/70">
+              Gallons, pounds of salt, and a chlorine dose with the formula on the page.
+            </span>
+          </Link>
+          <Link href="/learn" className="rounded-[14px] border border-pool-100 p-5 hover:border-pool-400">
+            <strong className="block text-base font-bold text-pool-950">Guides</strong>
+            <span className="mt-1 block text-sm text-pool-900/70">
+              Chemistry, seasonal checklists, and equipment troubleshooting.
+            </span>
+          </Link>
+        </div>
+      </section>
+
+
       {/* BOTTOM CTA */}
       <section className="container-page py-12 pb-28 md:py-16 md:pb-16">
         <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-pool-950 px-6 py-10 text-center md:flex-row md:px-10 md:text-left">

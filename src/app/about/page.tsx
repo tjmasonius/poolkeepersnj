@@ -2,11 +2,14 @@ import Link from "next/link";
 import { ArrowRight, ShieldCheck, Users, Wrench, Award } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: `About | ${siteConfig.brandName}`,
-};
+  description: `${siteConfig.legalName} is a local pool company serving ${siteConfig.serviceAreaFull}. Licensed, insured, and on a written scope for every visit.`,
+  path: "/about",
+});
 
 
 const VALUES = [

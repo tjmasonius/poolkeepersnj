@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Payment received | ${siteConfig.brandName}`,
+  robots: { index: false, follow: false },
 };
 
 export default function CheckoutSuccessPage() {

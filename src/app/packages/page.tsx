@@ -4,10 +4,13 @@ import { createClient } from "@/lib/supabase/server";
 import { siteConfig } from "@/lib/site-config";
 import { formatUsdFromCents } from "@/lib/format";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: `Packages | ${siteConfig.brandName}`,
-};
+  description: `Opening and closing packages from ${siteConfig.brandName}. Pay online and the office puts the visit on the schedule.`,
+  path: "/packages",
+});
 
 export const revalidate = 60;
 
