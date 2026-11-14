@@ -5,11 +5,15 @@ import { Icon } from "@/components/Icon";
 import { siteConfig } from "@/lib/site-config";
 import type { Service } from "@/lib/types";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
+import { CORE_SERVICES } from "@/lib/services";
 
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: `Services | ${siteConfig.brandName}`,
-};
+  description: `Pool openings, closings, weekly maintenance, and repairs across ${siteConfig.serviceAreaFull}. Scope is written on the quote before the visit.`,
+  path: "/services",
+});
 
 
 export const revalidate = 300;
@@ -47,7 +51,30 @@ export default async function ServicesPage() {
       </section>
 
 
-      <section className="container-page py-20">
+      <section className="container-page py-16">
+        <h2 className="text-2xl font-bold text-pool-950">Core services</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-pool-900/70">
+          Openings, closings, and weekly maintenance are the route. Each one has its own page
+          and its own scope. Pricing stays on the quote or on the packages page, not here.
+        </p>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {CORE_SERVICES.map((service) => (
+            <Link
+              key={service.href}
+              href={service.href}
+              className="rounded-2xl border border-pool-100 p-6 hover:border-pool-400"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-pool-400">
+                {service.eyebrow}
+              </p>
+              <h3 className="mt-2 text-lg font-semibold text-pool-950">{service.navLabel}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-pool-900/70">{service.lede}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-page pb-20">
         <div className="flex flex-col gap-16">
           {services.map((service, i) => (
             <div

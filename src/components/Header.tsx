@@ -10,10 +10,12 @@ import { siteConfig } from "@/lib/site-config";
 
 const NAV = [
   { href: "/services", label: "Services" },
+  { href: "/learn", label: "Guides" },
+  { href: "/tools", label: "Tools" },
   { href: "/packages", label: "Packages" },
   { href: "/service-area", label: "Service Area" },
   { href: "/about", label: "About" },
-  { href: "/ticket-status", label: "Check Service Status" },
+  { href: "/ticket-status", label: "Service Status" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -28,12 +30,12 @@ export function Header() {
         <Logo />
 
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-x-3 xl:gap-x-5 lg:flex">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-pool-900/80 transition hover:text-pool-600"
+              className="text-[13px] font-medium text-pool-900/80 transition hover:text-pool-600 xl:text-sm"
             >
               {item.label}
             </Link>
