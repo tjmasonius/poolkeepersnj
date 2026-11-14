@@ -6,8 +6,8 @@ export const siteConfig = {
   brandName: "Pool Keepers NJ",
   tagline: "Your pool, kept.",
   domain: "poolkeepersnj.com",
-  phone: "(732) 592-4013",
-  phoneHref: "tel:+17325924013",
+  phone: "(732) 295-2600",
+  phoneHref: "tel:+17322952600",
   email: "info@poolkeepersnj.com", // TODO: confirm this inbox exists / forward it
   hicLicense: "13VH11735400", // NJ Home Improvement Contractor registration number
   njContractorNotice:
